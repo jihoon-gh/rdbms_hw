@@ -64,6 +64,10 @@ public class StudentController {
                                    @RequestParam("email") String email,
                                    @RequestParam("graduation") String graduation,
                                    @RequestParam("degree") String degree){
+        List<Student> studentsByName = studentService.getStudentsByName(name);
+        if(studentsByName.size()>0){
+            return "Already registered";
+        }
         List<Student> studentsByEmail = studentService.getStudentsByEmail(email);
         if(studentsByEmail.size()>0){
             return "Already registered";
