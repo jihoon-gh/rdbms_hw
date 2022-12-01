@@ -48,7 +48,7 @@ public class StudentController {
             return "There are multiple students with the same name. Please contact the administrator by phone.";
         }
         Student student = studentsByName.get(0);
-        return student.getName()+ " : "+student.getDegree();
+        return student.getName()+ " : "+student.getEmail();
     }
 
     @GetMapping("/stat")
