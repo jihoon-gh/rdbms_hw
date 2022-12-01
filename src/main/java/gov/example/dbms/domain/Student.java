@@ -7,14 +7,15 @@ import java.util.List;
 @Table(name = "students")
 public class Student {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "sid")
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(columnDefinition = "integer", name = "sid")
     private Integer sid;
     @Column(columnDefinition = "varchar(100)")
     private String name;
     @Column(columnDefinition = "varchar(100)")
     private String email;
 
+    @Column(columnDefinition = "integer")
     private Integer graduation;
     @Column(columnDefinition = "varchar(100)")
     private String degree;
